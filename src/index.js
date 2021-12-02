@@ -4,10 +4,10 @@ import connectDB from './services/mongodb/connectDB'
 dotenv.config()
 
 const app = express()
-const port = process.env.PORT || 3002
+const port = process.env.PORT || 3003
 
 connectDB()
 
 app.listen(port, (req, res) => {
-  console.log(`Server listening at PORT ${port}`)
+    console.log(`Server listening at PORT ${port}`)
 })

@@ -4,6 +4,7 @@ const router = express.Router()
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import isAdmin from '../middlewares/isAdmin'
+import { body, validationResult } from 'express-validator'
 
 /*
 type : GET
@@ -29,7 +30,18 @@ params : none
 isProtected: false 
 */
 
-router.post('/signup', async (req, res) => {
+router.post('/signup',
+
+    body('firstName').isLength({min:5}),
+    body('email').isEmail(),
+    body('password').isLength({min:10})
+    , async (req, res) => {
+
+        const { errors } = validationResult(req)
+
+        if (errors.length > 0) return res.status(403).json(
+            { errors, message: "BAD REQUEST"}
+        )
 
     try {
         const { firstName, lastName = '', email, password } = req.body

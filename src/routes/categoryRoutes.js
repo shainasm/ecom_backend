@@ -56,7 +56,7 @@ router.post('/add',
 
 /*
 type : PUT
-path : /api/v1/category/:id
+path : /api/v1/category/update/id
 params : none
 isProtected: private (admin)
 */
@@ -83,7 +83,7 @@ router.put('/update/:id'
 
 /*
 type : DELETE
-path : /api/v1/category/:id
+path : /api/v1/category/delete/:id
 params : none
 isProtected: private (admin)
 */

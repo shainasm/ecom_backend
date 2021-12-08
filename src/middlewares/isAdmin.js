@@ -9,7 +9,7 @@ const isAdmin = (req, res, next) => {
 
         if (role == 1) next()
         else return res.json({
-            message: "UNAUTHORISED"
+            message: "ACCESS DENIED"
         })
 
     } else {

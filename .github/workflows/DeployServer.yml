@@ -18,7 +18,7 @@ jobs:
       - name: Add github email
         run: git config --global user.email 'smulani2002@gmail.com@gmail.com'
       - name: add heroku remote
-        run: git remote add heroku https://heroku:2a6202-d793-4c42-a39d-1c74102224fa@git.heroku.com/kartik-recipe-api.git
+        run: git remote add heroku https://heroku:960d255c-dc7b-4bd8-8db3-d251bef3c2a0@git.heroku.com/shaina-recipe-api.git
       - name: Fetch repo
         run: git fetch --unshallow
       - name: push to heroku remote
